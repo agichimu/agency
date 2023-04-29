@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultation Agency</title>
+</head>
+<style>
+  nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: beige;
+  z-index: 1;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+   align-items: left;
+    padding-left: 30px;
+  }
+  nav li {
+    float: left;
+  }
+  
+  nav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  nav li a:hover {
+    background-color: grey;
+  }
+  
+
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  padding: 80px 20px 20px;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+footer {
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+</style>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+    <h1>Consultation Agency</h1>
+    <p>We provide expert consulting services to help you achieve your business goals.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Us</h2>
+      <p>We are a team of experienced consultants with a proven track record of success. Our mission is to provide high-quality consulting services that help our clients achieve their business objectives.</p>
+    </section>
+    <section>
+      <h2>Our Services</h2>
+      <ul>
+        <li>Business Strategy Consulting</li>
+        <li>Marketing Consulting</li>
+        <li>Financial Consulting</li>
+        <li>Human Resources Consulting</li>
+        <li>Technology Consulting</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Contact Us</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br>
+
+        <input type="submit" value="Send">
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Consultation Agency</p>
+  </footer>
+
+  <script>
+const nav = document.querySelector('nav');
+const main = document.querySelector('main');
+
+window.addEventListener('scroll', () => {
+  const navHeight = nav.getBoundingClientRect().height;
+  const mainTop = main.getBoundingClientRect().top;
+  if (mainTop <= navHeight) {
+    nav.classList.add('fixed');
+    main.style.paddingTop = `${navHeight}px`;
+  } else {
+    nav.classList.remove('fixed');
+    main.style.paddingTop = '80px';
+  }
+});
+
+  </script>
+</body>
+
+</html>
